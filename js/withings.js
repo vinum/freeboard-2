@@ -56,7 +56,7 @@
           // data is always returned as an array
         	console.log("get data ");
 					console.log(data);
-					var dataObj = data.body.measuregrps[data.body.measuregrps.length-1].measures[0];
+					var dataObj = data.body.measuregrps[0].measures[0];
 					console.log(dataObj);
 					data = dataObj.value * Math.pow(10, dataObj.unit);
 					console.log(dataObj.value * Math.pow(10, dataObj.unit));
