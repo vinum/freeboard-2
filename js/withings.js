@@ -54,13 +54,9 @@
 				// replace with actual data
         success: function (data) {
           // data is always returned as an array
-        	console.log("get data ");
-					console.log(data);
 					var dataObj = data.body.measuregrps[0].measures[0];
-					console.log(dataObj);
 					data = dataObj.value * Math.pow(10, dataObj.unit);
-					console.log(dataObj.value * Math.pow(10, dataObj.unit));
-					var newData = data; // new data object
+					var newData = data; // weight in kg
 
           updateCallback(newData);
         },
