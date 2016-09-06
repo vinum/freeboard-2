@@ -37,7 +37,6 @@
 				data:JSON.parse(currentSettings.verified_withings_credentials),
         success: function (data) {
           // data is always returned as an array
-        	console.log(data);
 					self.requestURL = data; // new data object
         },
         error: function (xhr, status, error) {
@@ -63,6 +62,7 @@
         error: function (xhr, status, error) {
         }
       });
+			getData();
     }
 
     function createRefreshTimer (interval) {
