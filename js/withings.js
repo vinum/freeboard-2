@@ -61,9 +61,9 @@
         },
         error: function (xhr, status, error) {
         }
-      });
-			getData();
+      });	
     }
+		getData();
 
     function createRefreshTimer (interval) {
       if (refreshTimer) {
