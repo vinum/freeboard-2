@@ -63,13 +63,11 @@
         }
       });
     }
-		
+
     function createRefreshTimer (interval) {
       if (refreshTimer) {
         clearInterval(refreshTimer);
       }
-
-			getData();
 
       refreshTimer = setInterval(function () {
         getData();
