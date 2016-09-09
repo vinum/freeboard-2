@@ -37,13 +37,11 @@
         url: currentSettings.verified_withings_url,
 				type:"GET",
         dataType: "JSON",
-				// replace with actual data
         success: function (data) {
           // data is always returned as an array
 					var dataObj = data.body.measuregrps[0].measures[0];
 					data = dataObj.value * Math.pow(10, dataObj.unit);
 					var newData = data; // weight in kg
-
           updateCallback(newData);
         },
         error: function (xhr, status, error) {
