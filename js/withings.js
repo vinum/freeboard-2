@@ -6,11 +6,14 @@
 		description: "Use withings scale data to keep track of your health!",
     settings: [
       {
-        name: "verified_withings_credentials",
-        display_name: "Data credentials",
+        name: "verified_withings_url",
+        display_name: "Data URl",
         type: "text",
-        description: "Your data query credentials generated from <a href="+"https://withings-api.herokuapp.com/request-token-url/"+" target='_blank'>here</a>.",
+        description: "Your data query credentials generated from <a href="+"https://withings-api.herokuapp.com/request-token-url/"+" target='_blank'>here</a>, make sure to use the source data.",
       },
+			//The request-token-url launches an oauth flow within the herokuapp,
+			// the user signs in and then I set the callback to return the credentials
+			// which the heroku app uses to generate the link that needs to be pinged in getData
       {
         name: "refresh",
         display_name: "Refresh Every",
@@ -29,25 +32,9 @@
         refreshTimer,
         currentSettings = settings;
 
-		function setRequestUrl(){
-			$.ajax({
-        url: "https://withings-api.herokuapp.com/scale/",
-        dataType: "JSON",
-				// replace with actual data
-				data:JSON.parse(currentSettings.verified_withings_credentials),
-        success: function (data) {
-          // data is always returned as an array
-					self.requestURL = data; // new data object
-        },
-        error: function (xhr, status, error) {
-        }
-      });
-		}
-		setRequestUrl();
-
     function getData () {
       $.ajax({
-        url: self.requestURL,
+        url: currentSettings.verified_withings_url,
 				type:"GET",
         dataType: "JSON",
 				// replace with actual data
