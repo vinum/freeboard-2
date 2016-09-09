@@ -9,7 +9,7 @@
         name: "verified_withings_url",
         display_name: "Data URl",
         type: "text",
-        description: "Your data query credentials generated from <a href="+"https://withings-api.herokuapp.com/request-token-url/"+" target='_blank'>here</a>, make sure to use the source data.",
+        description: "Your data url generated from <a href="+"https://withings-api.herokuapp.com/request-token-url/"+" target='_blank'>here</a>.",
       },
 			//The request-token-url launches an oauth flow within the herokuapp,
 			// the user signs in and then I set the callback to return the credentials
