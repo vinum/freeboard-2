@@ -41,7 +41,7 @@
           // data is always returned as an array
 					var dataObj = data.body.measuregrps[0].measures[0];
 					data = dataObj.value * Math.pow(10, dataObj.unit);
-					var newData = data.toString(); // weight in kg
+					var newData = data.toFixed(Math.abs(dataObj.unit)); // weight in kg
           updateCallback(newData);
         },
         error: function (xhr, status, error) {
