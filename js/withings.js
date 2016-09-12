@@ -38,7 +38,6 @@
 				type:"GET",
         dataType: "JSON",
         success: function (data) {
-					console.log(data);
           // data is always returned as an array
 					var dataObj = data.body.measuregrps[0].measures[0];
 					data = dataObj.value * Math.pow(10, dataObj.unit);
